@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 // app/api/chat/route.ts
 import { StreamData, createDataStreamResponse, streamText } from "ai";
 import { NextResponse } from "next/server";
