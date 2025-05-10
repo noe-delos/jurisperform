@@ -29,6 +29,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { SUBJECTS } from "./data";
+import { LoadingIndicator } from "@/components/utils";
 
 // Primary colors
 const PRIMARY_COLOR = "#921733";
@@ -46,17 +47,6 @@ export interface Subject {
     icon: string;
   }>;
 }
-
-// Liste des matières disponibles
-// Suggestions génériques pour toutes les matières
-export const GENERIC_SUGGESTIONS = [
-  { text: "Quels sont les points clés à retenir ?", icon: "mdi-light:key" },
-  {
-    text: "Donne-moi un exemple de sujet d'examen",
-    icon: "mdi-light:file-document",
-  },
-  { text: "Comment aborder cette matière ?", icon: "mdi-light:help" },
-];
 
 // Composant de bouton de suggestion
 interface SuggestionButtonProps {
@@ -306,29 +296,6 @@ const SubjectPill: React.FC<SubjectPillProps> = ({ subject, onSelect }) => {
         </div>
       </div>
     </motion.div>
-  );
-};
-
-// Indicateur de chargement
-export const LoadingIndicator = ({ text }: { text: string }) => {
-  return (
-    <div className="flex items-center text-sm text-gray-500">
-      <div className="flex space-x-1 mr-2">
-        <div
-          className="h-2 w-2 bg-gray-400 rounded-full animate-bounce"
-          style={{ animationDelay: "0ms" }}
-        ></div>
-        <div
-          className="h-2 w-2 bg-gray-400 rounded-full animate-bounce"
-          style={{ animationDelay: "200ms" }}
-        ></div>
-        <div
-          className="h-2 w-2 bg-gray-400 rounded-full animate-bounce"
-          style={{ animationDelay: "400ms" }}
-        ></div>
-      </div>
-      <span>{text}</span>
-    </div>
   );
 };
 
