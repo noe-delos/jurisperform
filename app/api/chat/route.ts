@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     return createDataStreamResponse({
       execute: (dataStream) => {
         const result = streamText({
-          model: openai("gpt-4.1-mini"),
+          model: openai("gpt-4.1"),
           messages: messages || [],
           system:
             systemPrompt ||
